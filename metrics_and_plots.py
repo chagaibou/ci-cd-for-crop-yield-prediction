@@ -7,8 +7,8 @@ def save_metrics(metrics):
     with open("metrics.json", "w") as fp:
         json.dump(metrics, fp)
         
-def plot_learning_curve(model,X,y):
-    train_sizes, train_scores, val_scores = learning_curve(model,X,y,cv=5,train_sizes=np.linspace(0.1,1.0,10))
+def plot_learning_curve(model, X, y):
+    train_sizes, train_scores, val_scores = learning_curve(model, X, y, cv=5, train_sizes=np.linspace(0.1, 1.0, 10))
 
     # Calculer les moyennes et les écarts-types des scores
     train_scores_mean = np.mean(train_scores, axis=1)
@@ -31,4 +31,7 @@ def plot_learning_curve(model,X,y):
     plt.plot(train_sizes, val_scores_mean, 'o-', color='g', label='Erreur de validation')
 
     plt.legend(loc='best')
+
+    # Sauvegarder la figure
+    plt.savefig('learning_curve.png')
     plt.show()
