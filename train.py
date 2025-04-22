@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from metrics_and_plots import plot_learning_curve, save_metrics
 from model import evaluate_model, train_model
 from utils_and_constants import RAW_DATASET, TARGET_COLUMN
+from save_model import save_model
 
 
 def load_data(file_path):
@@ -30,10 +31,14 @@ def main():
     print("====================Test Set Metrics==================")
     print(json.dumps(metrics, indent=2))
     print("======================================================")
+    
+    #sauvegarde du model
+    save_model(model)
 
     # Save metrics into json file
     save_metrics(metrics)
     plot_learning_curve(model,X,y)
+    
 
 
 if __name__ == "__main__":
