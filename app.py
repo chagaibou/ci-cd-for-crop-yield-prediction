@@ -14,7 +14,7 @@ def predict(features):
 st.title('Prédiction de Rendement des Cultures')
 
 # Formulaire de saisie des caractéristiques
-st.sidebar.header('Saisir les caractéristiques')
+st.sidebar.header('Saisissez les caractéristiques')
 rainfall_mm = st.sidebar.number_input('Precipitations (mm)', min_value=0.0, max_value=2000.0, value=100.0)
 soil_quality_index = st.sidebar.number_input('Indice de Qualité du Sol', min_value=1.0, max_value=10.0, value=1.0)
 farm_size_hectares = st.sidebar.number_input('Taille de la Ferme (hectares)', min_value=0.0, max_value=1000.0, value=10.0)
