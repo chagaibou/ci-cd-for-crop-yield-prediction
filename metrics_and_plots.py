@@ -8,7 +8,7 @@ def save_metrics(metrics):
         json.dump(metrics, fp)
         
 def plot_learning_curve(model, X, y):
-    train_sizes, train_scores, val_scores = learning_curve(model, X, y, cv=5, train_sizes=np.linspace(0.1, 1.0, 10))
+    train_sizes, train_scores, val_scores = learning_curve(model, X, y, cv=4, train_sizes=np.linspace(0.1, 1.0, 10))
 
     # Calculer les moyennes et les écarts-types des scores
     train_scores_mean = np.mean(train_scores, axis=1)
